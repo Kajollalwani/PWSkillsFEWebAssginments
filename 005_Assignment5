@@ -1,0 +1,95 @@
+                  SEO ASSIGNMENT 
+
+1. What is SEO and explain importance os SEO?
+ans.SEO stands for SEARCH ENGINE OPTIMIZATION.It's a set of strategies and techniques used to improve the visibility of a website in search engine result pages.
+The primary goal of SEO is to increase organic traffic to website.
+Importance of SEO:
+a. SEO helps your website appear higher in search results.
+b. Higher ranking means more organic traffic.People tend to trust organic search results more than the paid ads.
+c. Compared to paid advertising, SEO is cost effective way.
+d. SEO can help your business reach a global audience.
+  
+2.create an html document with appropriate <title> and <meta> tags for seo optimization.ensure the title is descrptive is concise
+ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>best coffee shop in our city | cafe delights</title>
+    <meta name="description" content="cafe delights offers the finest coffee in pune.visit us for a delightful coffee blends.">
+</head>
+<body>
+    <h1>SEO</h1>
+</body>
+</html>
+   
+3.what are benifits of using meta tags?
+ans. Meta tags provide several benefits for websites and webpages,both in terms of SEO and user experience.
+a. Meta tags especially the <title> and <meta name="description"> tags, play a crucial role in optimizing a website for search engines.
+b. A well crafted <meta name="description"> tag can serve as a concise summary of a web page's content.
+c. Some meta tags like <meta name="viewport">, helps in making your website more accessible.
+d. Meta tags such as those for Schema Markup, provide structured data that search engine can used to display rich snippets in search results.
+
+4..create an HtML document that properly incorporates semantic elements like <header>,<article>,
+<section>,or <nav> to improve SEO and document structure?
+ans. <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semantic html example</title>
+</head>
+<body>
+    <header>
+        <h1>welcome to cafe delights</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">about us</a></li>
+                <li><a href="#menu">menu</a></li>
+                <li><a href="#contact">contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+        <article>
+            <h2>about us</h2>
+            <p>at cafe delights, we are passionate about coffee. our journey began in 2005 when we opened our first cafe in the heart of the city.since then we have been dedicated to serving the finest coffee blends and providing a cozy amosphere for our customers.</p>
+        </article>
+    </section>
+    <section id="menu">
+        <article>
+            <h2>our menu</h2>
+            <p>explore our wide range of coffee blends  pastries and sandwiches.</p>
+        </article>
+    </section>
+    <section id="contact">
+        <article>
+            <h2>contct us</h2>
+            <p>if you have any questions or feedback don't hesitate to get in touch with us.</p>
+        </article>
+    </section>
+    <footer>
+        <p>&copy;2023 cafe delights</p>
+    </footer>
+</body>
+</html>
+
+5.define favicon and give an illustrative example
+ans. <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favicon example</title>
+    <link rel="icon" href="https://icons.iconarchive.com/icons/custo6/tests-icon.png" type="image/x-icon">
+</head>
+<body>
+    <h1>favicon</h1>
+    <p>A favicon short for "favorite icon" is a small,typically square or rectangle icon associated with a website.
+        it is displayed on various places such as the browser's address bar, bookmarks or favorites list, and tabs. 
+        </p>
+</body>
+</html>
