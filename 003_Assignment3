@@ -1,0 +1,148 @@
+ Media and Forms Assignment
+
+1.create an image gallery that holds multiple images.
+ans. <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image gallery</title>
+    <style>
+        .image-gallery{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:10px;
+        }
+        .image-gallery img{
+            max-width:100%;
+            height:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-gallery">
+        <img src="food1.jpg" alt="image 1">
+        <img src="food2.jpg" alt="image 2">
+        <img src="food3.jpg" alt="image 3">
+    </div>
+</body>
+</html> 
+
+2.use a audio and video tags to display video and audio with the playback, audio controls
+ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>aud,vid</title>
+</head>
+<body>
+    <h1>audio</h1><br>
+    <audio src="audio.mp3" controls></audio><br><br>
+    <h1>video</h1><br>
+    <video src="video.mp3" controls></video>
+</body>
+</html>
+
+3.modify the previous assignment so that the audio and video play automatically as the page is loaded and they should play infinitely. 
+ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>aud,vid</title>
+</head>
+<body>
+    <h1>audio</h1><br>
+    <audio src="audio.mp3" controls autoplay muted loop></audio><br><br>
+    <h1>video</h1><br>
+    <video src="video.mp3" controls autoplay muted loop></video>
+</body>
+</html>
+
+4.Use iframe to embed the physicswallah wikepedia page properly
+ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>embed wikepedia</title>
+</head>
+<body>
+    <iframe src="https://en.wikipedia.org/wiki/Physicswallah" width="800" height="600" frameborder="1"></iframe>
+</body>
+</html>
+
+5.create a sign-up and sign-in form with proper validations.
+ a.Sign up form should have a first name, last name, email password, confirm password, age, gender,
+and agree to terms and conditions fields at minimum (You can add any other if you like).
+ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up form</title>
+</head>
+<body>
+    <h2>SIGN UP</h2>
+    <form-id="signup-form" action="#" method="post">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+       <br><br>
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+      <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" min="6" max="12" required>
+        <br><br>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="12" max="150" required>
+        <br><br>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+        <br><br> <br><br>
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the terms and conditions</label>
+        <br><br>
+        <input type="submit" value="Sign Up">
+    </form>   
+</body>
+</html>
+b.Sign in form should have email password fields.
+ans.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+</head>
+<body>
+    <h2>Sign In</h2>
+    <form id="signin-form" action="#" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="email-error"></span><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <span class="error" id="password-error"></span><br><br>
+
+        <input type="submit" value="Sign In">
+    </form>
+</body>
+</html>
