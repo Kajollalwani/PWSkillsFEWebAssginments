@@ -1,0 +1,256 @@
+ <!-- More on css assignment  -->
+ 1 Create a navigation bar similar to the below-mentioned image. The navigation bar must vontain 5
+ navigation links that are properly plaved within the navigation bar using the CSS box model. The navigation
+  items must vhange their text color on hover.
+  ans.<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <style>
+    nav {
+    background-color: cornflowerblue;
+    padding: 20px;
+    }
+    a {
+    color: #fff;
+    margin-right: 20px;
+    margin-left: 20px;
+    }
+    a:hover {
+    color: #000;
+    }
+    </style>
+    </head>
+    <body>
+    <nav>
+    <a href="#">Home</a><a href="#">About Us</a><a href="#">Contact</a
+    ><a href="#">Blog</a><a href="#">Login</a>
+    </nav>
+    </body>
+2 Create a div centered with an image and paragraph similar to the image mentioned below.
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Card</title>
+        <style>
+        img {
+        height: 200px;
+        width: 300px;
+        border-radius: 20px;
+        }
+        div {
+        margin: 0 auto;
+        background-color: #f8c42e;
+        width: 300px;
+        padding: 10px;
+        border-radius: 20px;
+        }
+        </style>
+        </head>
+        <body>
+        <div>
+        <img src="https://cdn.pwskills.com/assets/uploads/
+        thumbnails/64a514966977cc6e87e27504.png"
+        alt="PW Skills Full stack web development" />
+        <p><b>Course Name:</b>PW SKills full stack web development</p>
+        </div>
+        </body>
+3.Creae a navigaion ar similar to quesion 1. For each navigaion item, use a differen order style.        
+ans.<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar</title>
+    <style>
+    nav {
+    background-color: cornflowerblue;
+    padding: 20px;
+    }
+    a {
+color: #fff;
+margin-right: 20px;
+margin-left: 20px;
+}
+a:hover {
+color: #000;
+}
+.nav-link-1 {
+border: 3px solid black;
+padding: 5px;
+}
+.nav-link-2 {
+border: 3px dotted black;
+padding: 5px;
+}
+.nav-link-3 {
+border: 3px dashed black;
+padding: 5px;
+}
+.nav-link-4 {
+border: 3px double black;
+padding: 5px;
+}
+.nav-link-5 {
+border: 3px groove black;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<nav>
+<a href="#" class="nav-link-1">Home</a
+><a href="#" class="nav-link-2">About Us</a
+><a href="#" class="nav-link-3">Contact</a
+><a href="#" class="nav-link-4">Blog</a
+><a href="#" class="nav-link-5">Login</a>
+</nav>
+</body>
+4. Create a simple webpage with an image and make the image circular using border-radius.
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .circular-image {
+      border-radius: 50%;
+      width: 200px; /* Adjust the size as needed */
+      height: 200px; /* Adjust the size as needed */
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Circular Image</h1>
+  <img src="rabd.jpg" alt="Circular Image" class="circular-image">
+</body>
+</html>
+
+
+5.Create a simple blog websie about Google fonts. The webpage must have the heading wih “Oswald” font
+align cener of the page, below the heading have an image of Google fons and a paragraph about Google
+fonts in font “Monserra” paragraph font style should be“monserra” font.
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+    }
+    h1 {
+      font-family: "Oswald", sans-serif;
+      text-align: center;
+    }
+    .image-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Oswald Font - Google Fonts</h1>
+  <div class="image-container">
+    <img src="google-fonts-image.jpg" alt="Google Fonts">
+  </div>
+  <p>
+    Google Fonts is a free and open-source collection of fonts that you can use in your web projects. It offers a wide variety of fonts, including popular choices like "Montserrat." Google Fonts simplifies the process of adding custom fonts to your website, making it easy to enhance the typography and design of your content.
+  </p>
+</body>
+</html>
+
+6 Create a simple website as mentioned in the below image. You can get the assets by visiting https://
+pwskills.com/about-us.
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?
+family=Poppins:wght@200;400;500&display=swap");
+body {
+text-align: center;
+}
+h1 {
+font-family: "Poppins", sans-serif;
+font-weight: bold;
+font-size: 40px;
+}
+p {
+font-family: "Poppins", sans-serif;
+padding: 10px 15%;
+}
+</style>
+</head>
+<body>
+<h1>About us</h1>
+<p>PW Skills' mission is to permeate through every student/professional's outlook towards
+jobs and change their attitude and perspective from "How Can I Do It?" 
+exceptional upskilling courses at affordable rates, while being tech-forward so anyone,
+anywhere can access and
+improve their ability to be successful in life.
+</p>
+<img src="https://pwskills.com/images/aboutUs/aboutUs.png" alt="about us Image" />
+</body>
+</html>
+
+7.Create  simple webpge with a card similar to quesion number 2. The card must be semi-transparent as
+default and on hovering the card must be displyed clearly. Use CSS opcity to achieve this ouput 
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Card</title>
+<style>
+.courseImage {
+height: 200px;
+width: 300px;
+border-radius: 20px;
+}
+div {
+margin: 0 auto;
+background-color: #f8c42e;
+width: 300px;
+padding: 10px;
+border-radius: 20px;
+opacity: 0.5;
+}
+div:hover {
+opacity: 1;
+}
+</style>
+</head>
+<body>
+<div>
+<img class="courseImage" src="https://cdn.pwskills.com/assets/uploads/
+thumbnails/64215310af09d6aa495682f5.jpg"
+alt=" PW SKills web development" />
+<p><b>Course Name:</b> PW SKills web development</p>
+</div>
+</body>
+8.Creale a simple list of items as mentioned in the below image. 
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Styled List</title>
+<style>
+li {
+list-style-type: lower-roman;
+}
+</style>
+</head>
+<body>
+<h1>Requirements</h1>
+<ul>
+<li>System with minimum i3 processor or better.</li>
+<li>At least 4 GB of RAM.</li>
+<li>Working internet connection.</li>
+<li>Dedication to learn</li>
+</ul>
+</body>  
+
+
+
