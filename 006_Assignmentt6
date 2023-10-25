@@ -1,0 +1,184 @@
+           Starting with css assignment solution 
+
+1 Create a simple page with some div tags and show different ways to add CSS as well as what happens
+when you target the same elements with inline, internal, and external CSS. Also, utilize comments in the
+project where required.
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Internal CSS - Applied within the <style> tags -->
+  <style>
+    /* Styling for div with class "box-internal" */
+    .box-internal {
+      background-color: lightblue;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  
+  <!-- External CSS - Linked to an external .css file -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>CSS Application Methods</h1>
+  
+  <!-- Inline CSS - Applied directly to the element -->
+  <div style="background-color: lightgreen; width: 150px; height: 150px;">
+    <p>Inline CSS</p>
+  </div>
+  
+  <!-- Internal CSS - Applied through the class selector -->
+  <div class="box-internal">
+    <p>Internal CSS</p>
+  </div>
+  
+  <!-- External CSS - Applied through the class selector -->
+  <div class="box-external">
+    <p>External CSS</p>
+  </div>
+</body>
+</html>
+style.css
+/* Styling for div with class "box-external" */
+.box-external {
+  background-color: lightcoral;
+  width: 200px;
+  height: 200px;
+}
+
+
+
+2 Build an HTML page with multiple paragraphs, each assigned a unique class name. Write CSS rules using
+class selectors to apply distinct styling to each paragraph. Follow the BEM naming convention and
+explain how you've named the classes.
+
+index.html
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+<h1>BEM CSS EXAMPLE</h1>
+<div class="para">
+<p class="para__title">This is my para title</p>
+<p class="para__description">This is my para description</p>
+<button class="btn para__btn-primary">This is my primary para button</button>
+<button class="btn para__btn-secondary">This is my secondary para button</button>
+</div>
+</body>
+</html>
+style.css
+/* Block: para (Block-level styling) */
+.para {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.paragraph__title {
+  background-color: lightblue;
+  padding: 10px;
+  border: 1px solid #3498db;
+}
+
+.para__description {
+  background-color: lightgreen;
+  padding: 10px;
+  border: 1px solid #27ae60;
+  color: #333;
+}
+.btn {
+    background-color: #54fa54;
+    }
+    .para__btn-primary {
+    background-color: purple;
+    color: wheat;
+    }
+    .para__btn-secondary {
+    background-color: pink;
+    }
+
+
+3 Develop an HTML form with various input elements. Use 9SS to style the form, including setting
+background colors for input fields. create a custom color palette for the form elements, and demonstrate
+how to apply opacity to one of the form sections.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignment</title>
+<style>
+.firstName {
+background-color: red;
+}
+.lastName {
+background-color: green;
+}
+.email {
+background-color: yellow;
+}
+#terms:checked {
+/* This is the property used to color checkbox checked state */
+accent-color: violet;
+}
+button {
+opacity: 50%;
+}
+</style>
+</head>
+<body>
+<form>
+<label for="firstName">First Name:
+<input type="text" name="firstName" class="firstName" placeholder="John" id="firstName"
+required minlength=3
+max=20 />
+</label>
+<br>
+<label for="lastName">Bast Name:
+<input type="text" name="lastName" class="lastName" placeholder="Doe" id="lastName"
+required min=3 max=20 />
+</label>
+<br>
+<label for="email">Email:
+    <input type="email" name="email" class="email" placeholder="john@doe.com" id="email"
+    required />
+    </label>
+    <br>
+    <label for="password">Password:
+    <input type="password" name="password" class="password" placeholder="********"
+    id="password" required min=8 />
+    </label>
+    <br>
+    <label for="confirmPassword">Confirm Password:
+    <input type="password" name="confirmPassword" class="confirmPassword"
+    placeholder="********" id="confirmPassword"
+    required />
+    </label>
+    <br>
+    <label for="age">Age:
+    <input type="number" name="age" class="age" placeholder="38" id="age" required min=0
+    max=150 />
+    </label>
+    <br>
+    <label for="">Gender:
+    <input type="radio" id="male" value="male" name="gender" checked />
+    <label for="male">Male</label>
+    <input type="radio" id="female" value="female" name="gender" />
+    <label for="female">Female</label>
+    <input type="radio" id="other" value="other" name="gender" />
+    <label for="other">Other</label>
+    </label>
+    <br>
+    <label for="terms">terms:
+    <input type="checkbox" id="terms" required class="checkbox" /> I agree to terms and
+    conditions
+    </label>
+    <br>
+    <button type="submit">Register</button>
+    </form>
+    </body>
+    </html>
+
