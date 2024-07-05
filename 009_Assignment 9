@@ -1,0 +1,487 @@
+Assignment-9
+										       Flexbox in CSS
+
+
+Q1. Describe the main differences between the CSS Flexbox layout model and the CSS Grid layout model. When would you choose to use one over the other?
+they handle the arrangement of elements:
+Ans. Flexbox is primarily designed for one-dimensional layouts, focusing on distributing space and aligning items along a single axis (either horizontally or vertically). It's best suited for layouts where you have a row or column of items, such as navigation menus, card-based designs, or centering content within a container.
+CSS Grid is designed for two-dimensional layouts, allowing you to define both rows and columns. It creates a grid of cells where content can be placed in any cell or span across multiple cells. CSS Grid is ideal for complex grid-based designs like magazine layouts, forms, and any layout where content needs to be placed in a precise grid structure.
+Choosing between Flexbox and CSS Grid depends on your specific layout requirements.
+You might choose Flexbox when you need to arrange items along a single axis, for example, when creating navigation bars, header/footer layouts, or aligning elements within a container. Flexbox is great for responsive designs where items can vary in size.
+You might choose CSS Grid when you need to create more complex, two-dimensional layouts with rows and columns. It's particularly useful when you have a grid-like structure, such as galleries, forms with multiple fields, or any design that requires precise control over both rows and columns.
+In some cases, you may even combine both Flexbox and CSS Grid within a single layout to leverage the strengths of each model for different parts of your webpage.
+
+Q2. Q2. Explain the role of the following key properties in the Flexbox layout model
+1. justify-content
+2. align-items
+3. gap
+4. flex-direction
+5. flex-wrap
+Ans)
+1. justify-content: The justify-content property in Flexbox is used to control the alignment of flex items along the main axis of the flex container. It determines how the extra space or insufficient space along the main axis is distributed. There several values for justify-content, including flex-start, flex-end, center, space-between, space-evenly, and space-around.
+For example, if you set justify-content: center, flex items will be centered along the main axis of the container. If you set justify-content: space-between; the first item will be aligned to the start, the last item to the end, and the remaining space will be distributed evenly between the items.
+2. align-items: The align-items property controls the alignment of flex items along the cross axis of the flex container. It specifies how items are positioned within their container along this axis. It accepts values such as flex-start, flex-end, center, baseline, and stretch.
+For instance, if you set align-items: center; flex items will be vertically centered within the container. If you set align-items: stretch;, items will expand to fill the entire cross-axis space of the container, ensuring they have the same height.
+3. gap: The gap property is used to define the space between flex items in both directions, both along the main axis and the cross axis. It's often applied to the flex container itself. It simplifies spacing and creates consistent gaps between items without needing to apply margins to individual items.
+For example, if you set gap: 20px;, there will be a 20-pixel gap between adjacent flex items in both the horizontal and vertical directions, improving the overall spacing and alignment of items within the container.
+4. flex-direction: The flex-direction property determines the direction in which flex items are placed within the flex container. It defines the main axis and, consequently, the layout flow. It can have values such as row, row-reverse, column, or column-reverse.
+5. flex-wrap: The flex-wrap property controls whether flex items are allowed to wrap onto multiple lines (new rows or columns) within the flex container when they don't fit along the main axis. It accepts values like nowrap, wrap, and wrap-reverse.
+For instance, if you set flex-wrap: wrap;, flex items will wrap to the next line when there's not enough space on the current line, creating a multi-line layout. flex-wrap is useful for accommodating various screen sizes and orientations, allowing items to adapt to different viewports and preventing content from getting cut off.
+These properties play a critical role in creating well-structured and visually pleasing layouts in Flexbox, allowing you to control the positioning, alignment, and spacing of flex items within a container.
+Q3. Write the code to center a div using CSS Flexbox Reference Image given below.
+Ans)
+index.html
+<!DOCTYPE html> <html lang="en"> <head> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flex box</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+<div class="green"></div>
+</body> </html>
+style.css
+margin: 0;
+padding: 0;
+body{
+height: 180vh;
+width: 100vw; display: flex;
+justify-content: center;
+align-items: center;
+}
+.green{
+background-color: lightgreen;
+width: 300px;
+height: 360px;
+}
+Q4. A client of yours wants to add a pricing section on their website to showcase their newly introduced premium plans.
+You have to build the pricing section for their business. They have provided you with the figma design for the same. 
+Please download the below attached zip file and extract the 'assets' folder to the same directory as the Index.html' and 'style.css' files.
+https://drive.google.com/file/d/1R4SbyLh4acSebwGTZs19VxSERXKD02FS/view?usp=drive_link
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.6">
+<title>Pricing Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+- pricing section →
+<section class="pricing-section">
+1- free plan card →
+<div class="card">
+<h2 class="plan-name">Free Plan</h2>
+<p class="plan-for">For personal</p>
+<h2 class="pricing">$8</h2>
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></span>1
+Users</p>
+mails</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></span>4 Web
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></
+span>Responsive Website</p>
+SSL</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></span>Free
+<div class="subscribe-now-button-container">
+<button class="subscribe-now-button">Subscribe now</button>
+</div>
+</div>
+<!- basic plan card
+<div class="card dark">
+<h2 class="plan-name">Basic Plan</h2>
+Users</p>
+<p class="plan-for">For small business</p>
+<h2 class="pricing">$29</h2>
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></span>4
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></span>10
+Web mails</p>
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></ span>Responsive Website</p>
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></
+span>Free SSL</p>
+<div class="subscribe-now-button-container">
+SKILLS
+<button class="subscribe-now-button dark-btn">Subscribe now</button>
+</div>
+</div>
+<!- pro plan card
+<div class="card">
+<h2 class="plan name">Pro Plan</h2>
+<p class="plan-for">For enterprise</p>
+<h2 class="pricing">$49</h2>
+<p class="features"><span> <img src="./assets/light tick.png" alt="tick"></
+span>Unlimited users</p>
+<p
+class="features"><span> <img src="./assets/light_tick.png" alt="tick"></
+span>Unlimited Web mails</p>
+<p
+class="features"><span> <img src="./assets/light_tick.png" alt="tick"></
+span>Responsive Website</p>
+<p class="features"><span> <img src="./assets/Light_tick.png" alt="tick"></
+span>Free SSL + SEO</p>
+<div class="subscribe-now-button-container">
+<button class="subscribe-now-button">Subscribe now</button>
+</div>
+section>
+</body>
+</html>
+style.css
+body, p, h1, h2, h3{
+margin: 0; padding: 0;
+font-family: sans-serif;
+/* pricing section */
+.pricing-section{
+min-height:100vh; padding-top: 100px;
+display: flex;
+justify-content: center;
+gap: 20px;
+background-color: #F4F2FD;
+box-sizing: border-box;
+}
+/* card */
+.card{
+width: 250px;
+height: fit-content;
+background-color: white;
+border-radius: 7px;
+padding-top: 50px;
+padding-left: 35px;
+.plan-nane{
+font-size: 36px;
+}
+.pricing{
+font-size: 36px; font-weight: 100;
+margin: 12px 0;
+}
+.features{
+display: flex;
+align-items: center;
+}
+.subscribe-now-button-container{
+display: flex;
+center;
+justify-content:
+}
+margin-left: -35px;
+.subscribe-now-button-[
+background-color: #202842;
+color: white;
+border-radius: 24px;
+font-size: 18px; padding: 10px 35px;
+margin: 36px auto;
+border-color: transparent;
+/* dark card theme */ .dark{
+background-color: #282842; color: white;
+}
+.dark-btn{
+background-color: white;
+color: black;
+}
+Q5. build a clone of the IRCTC Ticket booking page.
+Please download the below attached zip file and extract the 'assets' folder to the same directory as the index.html' and 'style.css' files.
+https://drive.google.com/file/d/13Hjl2_9kNCaODJk4L-ronOMaoRs2bWAM/view?usp=drive_link
+Index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS FLEX</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!- full wrapper container
+<div class="full-container">
+<!- left section →
+<section class="left">
++!- navigation container
+<nav>
+<div class="logos-container">
+<img src="assets/IRCTCLogo.png" alt="IRCTC">
+<img src="assets/indianRailwaysLogo.png" alt="indian Railways">
+</div>
+<div class="navigation-container">
+<ul>
+<li>Ask Disha</li>
+<li>Contact us</li>
+<li>Alerts</li>
+<button class="selected">Login</button>
+<button>Register</button>
+</ul>
+<ul>
+<li>
+</li>
+<li>
+</li>
+<li>
+<</li>
+</ul>
+</div>
+</nav>
+<button>Agent Login</button>
++! nain section
+<main>
+<div>
+<h2 class="main-title">Indian Railways</h2>
+<p class="sub-main-title">
+</p>
+</div>
+<span class="green-text">
+Safety
+</span>
+<span class="orange-text">
+Security
+</span>
+<span class="blue-text">
+Punctuality
+</span>
+<div class="choose-container">
+<button class="selected"><ing src="assets/ticket_icon.png" alt=""> BOOK
+Ticket</button>
+<button><img src="assets/tick_icon.png" alt=""> PNR Status</button>
+button>
+<button><img src="assets/chart_icon.png" alt=""> Charts / Vacancy</
+</div>
+<div class="journey-details-container">
+<div class="journey-details-section-container">
+<div class="card-element">
+div class="card-element-image-container < ">
+<img src="assets/departure_train_icon.png" alt="">
+</div>
+<div class="select-option">
+<div class="dropdown">
+<span>From</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>Bangalore</h2>
+<span>KSR Bangalore</span>
+</div> </div>
+</div>
+<div class="center-from-to-arrow">
+</div>
+<img src="assets/to_from_arrow.png" alt="">
+<div class="card-element">
+<div class="card-element-image-container">
+<img src="assets/destination_train_icon.png" alt="">
+</div>
+<div class="select-option">
+<div class="dropdown">
+div class="dropdown">
+<span>To</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>Kasaragod</h2>
+<span>KSD Kasaragod</span>
+</div>
+</div>
+</div>
+</div>
+<div class="journey-details-section-container">
+<div class="card-element">
+<div class="card-element-image-container">
+</div>
+<img src="assets/calander-icon.png" alt="">
+<div class="select-option">
+<div class="dropdown">
+<span>Date</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>01 Aug 23</h2>
+</div>
+<span>Tuesday</span>
+</div>
+</div>
+<div class="card-element ">
+<div class="card-element-image-container">
+div>
+<div class="select-option">
+<div class="dropdown">
+<span>Class</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>3A</h2>
+<span>AC 3 tier</span>
+</div>
+</div>
+</div>
+<div class="card-element">
+<div class="card-element-image-container">
+<img src="assets/widgets_icon.png" alt="">
+</div>
+<div class="select-option">
+< div class="dropdown">
+<span>Seat Type</span>
+<ing src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>TATKAL</h2>
+<span>AC 3 Tier</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="search-button">Search Train <img src="assets/right-arrow-
+icon.png" alt=""></button>
+</main>
+</section>
+<!- right section →
+<section class="right">
+</section>
+<img src="assets/hero Image.png" alt="">
+</div>
+</body>
+</html>
+style.css
+/* Universal /
+*{ list-style: none; margin: 0%;
+padding: 0%;
+}
+/* full wrapper container */
+.full-container{
+max-width: 1440px;
+min-width: 1024px;
+margin: 0 auto;
+display: flex;
+font-family: sans-serif;
+/* right section */ .right{ width: 50%; height: auto; }
+.right ing{ height: 100%;
+width: 100%;
+}
+/* left section */ .left{
+width: 50%; padding: 50px 70px;
+display: flex; flex-direction: column;
+}
+SKILLS
+}
+/* navigation section */
+nav{
+display: flex; justify-content: space-between;
+margin-bottom: 80px;
+logos-container{
+display: flex;
+gap: 20px;
+}
+.logos-container ing{ height: 75px; width: 75px; }
+Hot weather Now
+ENG
+IN
+.navigation-container{ display: flex;
+gap: 20px;
+logos-container ing( height: 75px;
+width: 75px;
+}
+.navigation-container-(
+display: flex; flex-direction:column; gap: 10px;
+}
+.navigation-container ul{
+display: flex;
+gap: 20px;
+font-size: 15px;
+.navigation-container li{ cursor: pointer;
+}
+.navigation-container button{ padding: 4px 7px;
+border:1px solid lightgray;
+background-color: transparent;
+border-radius: 3px; cursor: pointer;
+}
+.navigation-container selected{
+background-color:#FB7928; border-color: #F8792B;
+color: white;
+}
+/* main section */
+main{
+display: flex;
+flex-direction: column;
+gap: 50px;
+main .main-title{
+font-size: 48px;
+margin-bottom: 20px;
+}
+main sub-main-title{
+display: flex; gap: 15px;
+font-size: 27px;
+}
+main.choose-container{
+display: flex;
+gap: 15px;
+} main.choose-container button{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 5px 10px;
+font-size: 12px;
+font-weight: 700;
+background-color: transparent;
+border: 1px solid lightgray;
+border-radius: 3px;
+cursor: pointer;
+}
+Hot weather Now
+ENG
+IN
+main.choose-container.selected(
+}
+border-color:#213077; background-color: #213077;
+color: white;
+main journey-details-section-container{
+border: 1px solid lightgray;
+padding: 15px 0px;
+margin-bottom: 10px;
+}
+border-radius: 5px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-evenly;
+main.card-element{
+display: flex;
+align-items: center;
+}
+.card-element-image-container img{
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+}
+main.select-option{
+display: flex;
+flex-direction: column;
+qap: 5px;
+cursor: pointer;
+main.choose-location span{
+font-size: 12px;
+color: gray;
+}
+main.dropdown {
+display: flex;
+align-items: center;
+color:gray;
+}
+/* search train button */
+search-button{ .
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+font-weight: 700; background-color: #81BB8A;
+padding: 15px 0;
+font-size: 20px;
+color: white;
+border: none; border-radius: 4px; cursor: pointer;
+}
+SKILLS
+/* common class */
+.green-text{ color: #01BB0A; }
+.orange-text{ color: #FB7928; }
+.blue-text{ color: #213077; }
+.border-right-left{ height: 180%; width: 0;
+}
+border-right: 1px solid lightgray;
+}
+
+
