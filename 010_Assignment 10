@@ -1,0 +1,589 @@
+                                             ASSIGNMENT 10
+1.describe the main differences between the css flexbox layout model and the css grid layout model. 
+when would you choose to use one over the other?
+ans. The CSS Flexbox and Grid layout models are both powerful tools for creating layouts in web design, but they serve different purposes and excel in different scenarios. Here's a breakdown of their main differences:
+
+1. Layout Structure:
+Flexbox:
+One-dimensional layout: Flexbox is designed for layouts in a single direction—either as a row (horizontal) or a column (vertical).
+Primary Use: Aligning and distributing space among items in a single direction.
+Grid:
+Two-dimensional layout: CSS Grid allows for both rows and columns, making it suitable for more complex layouts.
+Primary Use: Creating grid-based layouts with both rows and columns, perfect for laying out entire pages or components with a well-defined structure.
+2. Item Placement:
+Flexbox:
+Content-Driven: Items are placed based on the available space in the container, and their order in the HTML can influence their visual order.
+Use Case: Ideal for components where you need to distribute space between items dynamically, such as navigation bars, flex containers, and buttons.
+Grid:
+Grid-Driven: Items are placed into a predefined grid with explicit row and column locations.
+Use Case: Best for layouts where the position of elements is crucial, such as a page's main structure, image galleries, or complex UI designs with predictable and repeated patterns.
+3. Flexibility & Responsiveness:
+Flexbox:
+Flexible: Flexbox is inherently more flexible, making it easier to create layouts that adjust smoothly as the viewport changes.
+Responsive Use: Excellent for responsive design scenarios where items need to adapt their size, alignment, or order on different screen sizes.
+Grid:
+Structured: While Grid can also be responsive, it’s more structured, making it easier to control the exact placement and alignment of items across different screen sizes.
+Responsive Use: Suitable for designs that require consistent, grid-based layouts across various screen sizes with predictable changes.
+4. Complexity:
+Flexbox:
+Simpler: Easier to learn and use for simpler, single-direction layouts.
+Grid:
+More Complex: More complex and powerful, suitable for detailed, multi-dimensional layouts.
+5. Alignment and Spacing:
+Flexbox:
+Powerful Alignment: Flexbox provides a lot of control over alignment, spacing, and order of items within a flex container, making it ideal for centering content or evenly distributing space among items.
+Grid:
+Precise Placement: Grid allows for precise placement of elements within defined grid areas, providing more control over both the alignment and the spacing in two dimensions.
+When to Use Each:
+Use Flexbox:
+When you need a simple, one-dimensional layout (either row or column).
+When you want to evenly distribute space among items in a container.
+When you need flexibility in the order and alignment of items.
+Use Grid:
+When you need a complex, two-dimensional layout with both rows and columns.
+When you need precise control over the placement and alignment of elements.
+When your design calls for a grid-based approach, such as a webpage layout or a dashboard with multiple content areas.
+Both Flexbox and Grid can be used together, combining their strengths depending on the needs of the layout. Flexbox can handle smaller components within a Grid layout, offering flexibility within a more rigid structure.
+
+
+
+2.explain the role of following key properties in the flexbox layout model:
+justify-content,align-items,gap,flex-direction,flex-wrap
+In the Flexbox layout model, these key properties play crucial roles in how flex items (child elements) are aligned and distributed within a flex container (parent element). Here’s an explanation of each:
+
+1. justify-content
+Role: This property defines how the flex items are distributed along the main axis of the flex container.
+Common Values:
+flex-start: Aligns items to the start of the main axis.
+flex-end: Aligns items to the end of the main axis.
+center: Centers items along the main axis.
+space-between: Distributes items evenly with the first item at the start and the last item at the end.
+space-around: Distributes items with equal space around them.
+2. align-items
+Role: This property controls the alignment of flex items along the cross axis (perpendicular to the main axis).
+Common Values:
+stretch: Stretches items to fill the container (default).
+flex-start: Aligns items to the start of the cross axis.
+flex-end: Aligns items to the end of the cross axis.
+center: Centers items along the cross axis.
+baseline: Aligns items such that their baselines align.
+3. gap
+Role: Defines the spacing (gaps) between flex items.
+Common Use: gap: 10px; will create a 10px gap between each item.
+Variants:
+row-gap: Controls the space between rows in a multi-line flexbox.
+column-gap: Controls the space between columns in a multi-line flexbox.
+4. flex-direction
+Role: Determines the direction in which the flex items are placed in the flex container.
+Common Values:
+row: Items are placed in the direction of text (left to right).
+row-reverse: Items are placed in the reverse direction (right to left).
+column: Items are placed top to bottom.
+column-reverse: Items are placed bottom to top.
+5. flex-wrap
+Role: Controls whether flex items should wrap onto multiple lines or stay in a single line within the flex container.
+Common Values:
+nowrap: All items are placed in a single line (default).
+wrap: Items wrap onto multiple lines from top to bottom.
+wrap-reverse: Items wrap onto multiple lines from bottom to top.
+Each of these properties allows for greater control over the layout, making it easier to create responsive and flexible designs.
+
+
+3.write the code to center a div using Flexbox
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="with=device-width, initial-scale=1.0">
+<title>Flex box</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="green"></div>
+</body>
+</html> 
+style.css
+*{
+margin: 0;
+padding: 0;
+}
+body{
+height: 100vh;
+width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.green{
+background-color:green;
+width: 300px;
+height: 300px;
+}
+
+
+4. A client of yours wants to add a pricing section on their website to showcase their newly introduced
+premium plans.
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- pricing section -->
+<section class="pricing section">
+<!--free plan card -->
+<div class="card">
+<h2 class="plan-name>Free Plan </h2>
+<p class="plan-for">For personal</p>
+<h2 class="pricing">$0</h2>
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></span>1
+Users</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></span>4 Web
+mails</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></
+span>Responsive Website</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt=""></span>Free
+SSL</p>
+<div class="subscribe-now-button-container">
+<button class="subscribe-now-button">Subscribe now</button>
+</div>
+</div>
+<!-- basic plan card -->
+<div class="card dark">
+<h2 class="plan-name">Basic Plan</h2>
+<p class="plan-for">For small business</p>
+<h2 class="pricing">$29</h2>
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></span>4
+Users</p>
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></span>10
+Web mails</p>
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></
+span>Responsive Website</p>
+<p class="features"><span> <img src="./assets/dark_tick.png" alt="tick"></
+span>Free SSL</p>
+<div class="subscribe-now-button-container">
+<button class="subscribe-now-button dark-btn">Subscribe now</button>
+</div>
+</div>
+<!-- pro plan card -->
+<div class="card">
+<h2 class="plan-name">Pro Plan</h2>
+<p class="plan-for">For enterprise</p>
+<h2 class="pricing">$49</h2>
+<p class="features"><span> <img src="./assets/light_tick.png" alt="tick"></
+span>Unlimited users</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt="tick"></
+span>Unlimited Web mails</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt="tick"></
+span>Responsive Website</p>
+<p class="features"><span> <img src="./assets/light_tick.png" alt="tick"></
+span>Free SSL + SEO</p>
+<div class="subscribe-now-button-container">
+<button class="subscribe-now-button">Subscribe now</button>
+</div>
+</div>
+</section>
+</body>
+</html>
+
+style.css
+body, p,h1,h2,h3{
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+}
+/* pricing section */
+.pricing-section{
+min-height:100vh;
+padding-top: 100px;
+display: flex;
+justify-content: center;
+gap: 20px;
+background-color: #F4F2FD;
+box-sizing: border-box;
+}
+/* card */
+.card{
+width: 250px;
+height: fit-content;
+background-color: white;
+border-radius: 7px;
+padding-top: 50px;
+padding-left: 35px;
+}
+.plan-name{
+font-size: 36px;
+}
+.pricing{
+font-size: 36px;
+font-weight: 100;
+margin: 12px 0;
+}
+
+.features{
+display: flex;
+align-items: center;
+}
+.subscribe-now-button-container{
+display: flex;
+justify-content: center;
+margin-left: -35px;
+}
+.subscribe-now-button{
+background-color: #202842;
+color: white;
+border-radius: 24px;
+font-size: 18px;
+padding: 10px 35px;
+margin: 30px auto;
+border-color: transparent;
+}
+
+/* dark card theme */
+.dark{
+background-color: #202842;
+color: white;
+}
+.dark-btn{
+background-color: white;
+color:black; }
+
+5.build a clone of IRCTC Ticket booking page.
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS FLEX</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- full wrapper container -->
+<div class="full-container">
+<!-- left section -->
+<section class="left">
+<!-- navigation container -->
+<nav>
+<div class="logos-container">
+<img src="assets/IRCTCLogo.png" alt="IRCTC">
+<img src="assets/indianRailwaysLogo.png" alt="indian Railways">
+</div>
+<div class="navigation-container">
+<ul>
+<li>Ask Disha</li>
+<li>Contact us</li>
+<li>Alerts</li>
+</ul>
+<ul>
+<li>
+<button class="selected">Login</button>
+</li>
+<li>
+<button>Register</button>
+</li>
+<li>
+<button>Agent Login</button>
+</li>
+</ul>
+</div>
+</nav>
+<!-- main section -->
+<main>
+<div>
+<h2 class="main-title">Indian Railways</h2>
+<p class="sub-main-title">
+<span class="green-text">
+Safety
+</span>
+<span class="orange-text">
+Security
+</span>
+<span class="blue-text">
+Punctuality
+</span>
+</p>
+</div>
+<div class="choose-container">
+<button class="selected"><img src="assets/ticket_icon.png" alt=""> BOOK
+Ticket</button>
+<button><img src="assets/tick_icon.png" alt=""> PNR Status</button>
+<button><img src="assets/chart_icon.png" alt=""> Charts / Vacancy</
+button>
+</div>
+<div class="journey-details-container">
+<div class="journey-details-section-container">
+<div class="card-element">
+<div class="card-element-image-container">
+<img src="assets/departure_train_icon.png" alt="">
+</div>
+<div class="select-option">
+<div class="dropdown">
+<span>From</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>Bangalore</h2>
+<span>KSR - Bangalore</span>
+</div>
+</div>
+</div>
+<div class="center-from-to-arrow">
+<img src="assets/to_from_arrow.png" alt="">
+</div>
+<div class="card-element">
+<div class="card-element-image-container">
+<img src="assets/destination_train_icon.png" alt="">
+</div>
+<div class="select-option">
+<div class="dropdown">
+<span>To</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>Kasaragod</h2>
+<span>KSD - Kasaragod</span>
+</div>
+</div>
+</div>
+</div>
+<div class="journey-details-section-container">
+<div class="card-element">
+<div class="card-element-image-container">
+<img src="assets/calander-icon.png" alt="">
+</div>
+<div class="select-option">
+<div class="dropdown">
+<span>Date</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>01 Aug 23</h2>
+<span>Tuesday</span>
+</div>
+</div>
+</div>
+<div class="card-element ">
+<div class="card-element-image-container">
+<img src="assets/threedot-icon.png" alt="">
+</div>
+<div class="select-option">
+<div class="dropdown">
+<span>Class</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>3A</h2>
+<span>AC 3 tier</span>
+</div>
+</div>
+</div>
+<div class="card-element">
+<div class="card-element-image-container">
+<img src="assets/widgets_icon.png" alt="">
+</div>
+<div class="select-option">
+<div class="dropdown">
+<span>Seat Type</span>
+<img src="assets/expand_more_icon.png" alt="">
+</div>
+<div class="choose-location">
+<h2>TATKAL</h2>
+<span>AC 3 Tier</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<button class="search-button">Search Train <img src="assets/right-arrow-
+icon.png" alt=""></button>
+
+</main>
+</section>
+<!-- right section -->
+<section class="right">
+<img src="assets/heroImage.png" alt="">
+</section>
+</div>
+</body>
+</html>
+style.css
+/* Universal */
+*{
+list-style: none;
+margin: 0%;
+padding: 0%;
+}
+/* full wrapper container */
+.full-container{
+max-width: 1440px;
+min-width: 1024px;
+margin: 0 auto;
+display: flex;
+font-family: sans-serif;
+}
+/* right section */
+.right{
+width: 50%;
+height: auto;
+}
+.right img{
+height: 100%;
+width: 100%;
+}
+/* left section */
+.left{
+width: 50%;
+padding: 50px 70px;
+display: flex;
+flex-direction: column;
+}
+/* navigation section */
+nav{
+display: flex;
+justify-content: space-between;
+margin-bottom: 80px;
+}
+.logos-container{
+display: flex;
+gap: 20px;
+}
+.logos-container img{
+height: 75px;
+width: 75px;
+}
+.navigation-container{
+display: flex;
+flex-direction:column;
+gap: 10px;
+}
+.navigation-container ul{
+display: flex;
+gap: 20px;
+font-size: 15px;
+}
+.navigation-container li{
+cursor: pointer;
+}
+.navigation-container button{
+padding: 4px 7px;
+border:1px solid lightgray;
+background-color: transparent;
+border-radius: 3px;
+cursor: pointer;
+}
+.navigation-container .selected{
+background-color:#FB792B;
+border-color: #FB792B;
+color: white;
+}
+/* main section */
+main{
+display: flex;
+flex-direction: column;
+gap: 50px;
+}
+main .main-title{
+font-size: 40px;
+margin-bottom: 20px;
+}
+main .sub-main-title{
+display: flex;
+gap: 15px;
+font-size: 27px;
+}
+main .choose-container{
+display: flex;
+gap: 15px;
+}
+main .choose-container button{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+padding: 5px 10px;
+font-size: 12px;
+font-weight: 700;
+background-color: transparent;
+border: 1px solid lightgray;
+border-radius: 3px;
+cursor: pointer;
+}
+main .choose-container .selected{
+border-color:#213D77 ;
+background-color: #213D77;
+color: white;
+}
+
+main .journey-details-section-container{
+border: 1px solid lightgray;
+padding: 15px 0px;
+margin-bottom: 10px;
+border-radius: 5px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-evenly;
+}
+
+main .card-element{
+display: flex;
+align-items: center;
+
+}
+.card-element-image-container img{
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+main .select-option{
+display: flex;
+flex-direction: column;
+gap: 5px;
+cursor: pointer;
+}
+main .choose-location span{
+font-size: 12px;
+color: gray;
+}
+main .dropdown{
+display: flex;
+align-items: center;
+color:gray;
+}
+/* search train button */
+.search-button{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+font-weight: 700;
+background-color: #01BB0A;
+padding: 15px 0;
+font-size: 20px;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+/* common class */
+.green-text{
+color: #01BB0A;
+}
+.orange-text{
+color: #FB792B;
+}
+.blue-text{
+color: #213D77;
+}
+.border-right-left{
+height: 100%;
+width: 0;
+border-right: 1px solid lightgray;
+}
