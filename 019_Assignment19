@@ -1,0 +1,42 @@
+                                              Operations in Javascript(Part-2)Assignment
+
+1.Explain the usage of ternary operator with syntax and write a program to check whether the number is even
+or odd using the ternary operator.
+The ternary operator in JavaScript is a concise way to write an if-else statement. 
+It takes three operands: a condition, a value if the condition is true, and a value if the condition is false.
+     Syntax:
+condition ? valueIfTrue : valueIfFalse;
+ EXAMPLE:
+let number = 7;
+let result = (number % 2 === 0) ? "Even" : "Odd";
+console.log(result);  // Output: Odd
+In this program, the ternary operator checks if the number is even or odd and assigns the result accordingly.
+
+2.Describe the usage of the comma operator in JavaScript and provide an example.
+The comma operator in JavaScript allows multiple expressions to be evaluated in a single statement, with the result of the last expression being returned.
+
+Usage:
+It is often used to include multiple operations in places where only one expression is expected, such as in a loop or initialization.
+Example:
+let x = (1, 2, 3);
+console.log(x);  // Output: 3
+Here, the comma operator evaluates 1, 2, and 3, but the final result of the entire expression is 3, the last value.
+
+3.Use a nested ternary operator to check that a number is positive, negative or zero. You have to print
+“positive” if the number is positive and similarly for negative and zero also.
+let number = -5;
+
+let result = (number > 0) ? "Positive" : 
+             (number < 0) ? "Negative" : "Zero";
+
+console.log(result);  // Output: Negative
+In this code, the first ternary checks if the number is greater than 0 (positive), the second checks if it is less than 0 (negative), otherwise, it defaults to zero.
+
+4.Use a ternary operator to check that a person is eligible to vote or not by checking his age. If the age of the
+person is less than 18 then “You cannot vote” should be logged else “You can vote” should be logged.
+let age = 17;
+
+let result = (age >= 18) ? "You can vote" : "You cannot vote";
+
+console.log(result);  // Output: You cannot vote
+In this code, the ternary operator checks if the person's age is 18 or above. If true, it logs "You can vote," otherwise "You cannot vote."
