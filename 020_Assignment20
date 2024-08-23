@@ -1,0 +1,190 @@
+                                   Conditions and Loops Assignment 
+
+Q1. What are conditional statements? Explain conditional statements with syntax and examples.
+Conditional statements in JavaScript allow you to execute different blocks of code based on certain conditions.
+They help control the flow of a program depending on whether a specified condition is true or false.
+Types of Conditional Statements:
+if statement: Executes a block of code if the condition is true.
+
+Syntax:
+if (condition) {
+    // Code to be executed if condition is true
+}
+Example:
+let age = 18;
+if (age >= 18) {
+    console.log("You are an adult");
+}
+
+if-else statement: Executes one block of code if the condition is true, and another if it is false.
+
+Syntax:
+if (condition) {
+    // Code if true
+} else {
+    // Code if false
+}
+Example:
+let age = 16;
+if (age >= 18) {
+    console.log("You can vote");
+} else {
+    console.log("You cannot vote");
+}
+
+else if statement: Adds additional conditions to check after the initial if.
+
+Syntax:
+if (condition1) {
+    // Code if condition1 is true
+} else if (condition2) {
+    // Code if condition2 is true
+} else {
+    // Code if neither is true
+}
+Example:
+let age = 17;
+if (age > 18) {
+    console.log("Adult");
+} else if (age === 18) {
+    console.log("Just turned adult");
+} else {
+    console.log("Not an adult");
+}
+These structures allow for decision-making in code based on varying conditions.
+
+Q2. Write a program that grades students based on their marks
+ If greater than 90 then A Grade
+ If between 70 and 90 then a B grade
+ If between 50 and 70 then a C grade
+ Below 50 then an F grade
+solution
+let marks = 85;  // Example marks
+
+if (marks > 90) {
+    console.log("A Grade");
+} else if (marks >= 70 && marks <= 90) {
+    console.log("B Grade");
+} else if (marks >= 50 && marks < 70) {
+    console.log("C Grade");
+} else {
+    console.log("F Grade");
+}
+This program checks the student's marks and prints the corresponding grade based on the defined conditions:
+Marks greater than 90: A Grade
+Marks between 70 and 90: B Grade
+Marks between 50 and 70: C Grade
+Marks below 50: F Grade
+
+Q3. What are loops, and what do we need them? Explain different types of loops with their syntax and
+examples.
+Loops in JavaScript are used to execute a block of code repeatedly as long as a specified condition is true.
+They are essential for automating repetitive tasks, iterating over arrays, or processing data until a condition is met.
+ Types of Loops:
+
+1. `for` loop
+   Used when the number of iterations is known beforehand.
+   - Syntax:
+   for (initialization; condition; increment/decrement) {
+       // Code to be executed
+   }
+   - Example:
+   for (let i = 0; i < 5; i++) {
+       console.log(i);  // Output: 0, 1, 2, 3, 4
+   }
+
+2. `while` loop 
+   Used when the number of iterations is unknown and depends on a condition being true.
+   - Syntax:
+   while (condition) {
+       // Code to be executed
+   }
+   - Example:
+   let i = 0;
+   while (i < 5) {
+       console.log(i);  // Output: 0, 1, 2, 3, 4
+       i++;
+   }
+
+3. `do...while` loop  
+   Similar to the `while` loop, but the block of code is executed at least once, even if the condition is false.
+   - Syntax:
+   do {
+       // Code to be executed
+   } while (condition);
+   - Example:
+   let i = 0;
+   do {
+       console.log(i);  // Output: 0, 1, 2, 3, 4
+       i++;
+   } while (i < 5);
+
+4. `for...in` loop  
+   Used for iterating over the properties of an object.
+   - Syntax:
+   for (key in object) {
+       // Code to be executed
+   }
+   - Example:
+   let obj = {a: 1, b: 2, c: 3};
+   for (let key in obj) {
+       console.log(key, obj[key]);  // Output: a 1, b 2, c 3
+   }
+
+5. `for...of` loop
+   Used for iterating over the values of an iterable (like arrays, strings, etc.).
+   - Syntax:
+   for (value of iterable) {
+       // Code to be executed
+   }
+   - Example:
+   let arr = [1, 2, 3, 4, 5];
+   for (let value of arr) {
+       console.log(value);  // Output: 1, 2, 3, 4, 5
+   }
+
+Why We Need Loops:
+Loops are needed to reduce redundancy in code by automating repetitive tasks. 
+Instead of writing the same code multiple times, a loop lets you define it once and execute it repeatedly based on a condition. 
+This makes code cleaner, more efficient, and easier to maintain.
+
+Q4. Generate n9mbers between any 2 given numbers.
+Ex
+const num1 = 10
+const num2 = 25;
+Output: 11, 12, 13, ...., 25
+solution
+const num1 = 10;
+const num2 = 25;
+
+let numbers = [];
+for (let i = num1 + 1; i <= num2; i++) {
+    numbers.push(i);
+}
+
+console.log(numbers.join(", "));  // Output: 11, 12, 13, ..., 25
+
+ Explanation:
+1. Initialize the Array: `numbers` is an empty array that will store the generated numbers.
+2. Loop Through the Range: The `for` loop starts at `num1 + 1` and goes up to `num2`, pushing each number into the `numbers` array.
+3. Output the Result: `numbers.join(", ")` converts the array into a string of numbers separated by commas for display.
+
+Q5. Use the while loop to print n9mbers from 1 to 25 in ascending and descending order.
+solution
+Ascending Order:
+let i = 1;
+while (i <= 25) {
+    console.log(i);  // Output: 1, 2, 3, ..., 25
+    i++;
+}
+
+ Descending Order:
+let j = 25;
+while (j >= 1) {
+    console.log(j);  // Output: 25, 24, 23, ..., 1
+    j--;
+}
+
+ Explanation:
+- Ascending Order: Initialize `i` to 1 and increment it by 1 in each iteration until it exceeds 25.
+- Descending Order: Initialize `j` to 25 and decrement it by 1 in each iteration until it is less than 1.
