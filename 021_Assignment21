@@ -1,0 +1,142 @@
+                                               Function In Javascript Assignment
+
+Q1. Create an arrow function called square that takes a number as an argument and returns its square. Use
+the arrow function to calculate the square of a given number and display the result.
+solution
+const square = (num) => num * num;
+let number = 5;
+let result = square(number);
+console.log(`The square of ${number} is ${result}`);  // Output: The square of 5 is 25
+Arrow Function: The square function is defined using the arrow function syntax =>, which simplifies function creation.
+Example Usage: The function is called with a number (in this case, 5), and the result is logged to the console.
+This approach efficiently calculates and displays the square of a given number.
+
+Q2. Create a JavaScript function called generateGreeting that takes a name as an argument and returns a
+personalized greeting message. Use this function to greet three different people.
+solution
+function generateGreeting(name) {
+    return `Hello, ${name}! Welcome to the platform.`;
+}
+
+// Example usage
+let greeting1 = generateGreeting("Alice");
+let greeting2 = generateGreeting("Bob");
+let greeting3 = generateGreeting("Charlie");
+
+console.log(greeting1);  // Output: Hello, Alice! Welcome to the platform.
+console.log(greeting2);  // Output: Hello, Bob! Welcome to the platform.
+console.log(greeting3);  // Output: Hello, Charlie! Welcome to the platform.
+Function: generateGreeting takes a name as an argument and returns a greeting message using template literals (${name}).
+Example Usage: The function is used to greet three different people, and the results are printed to the console.
+
+Q3. Create an IIFE (Immediately Invoked Function Expression) that calculates the square of a number and
+immediately displays the result.
+solution
+(function(num) {
+    console.log(`The square of ${num} is ${num * num}`);
+})(6);
+IIFE: The function is immediately invoked by enclosing it in parentheses (function() { ... })() and passing the number as an argument.
+Example Usage: In this example, the number 6 is passed to the IIFE, which calculates and displays the square of 6 (36) immediately.
+
+Q4. Write a JavaScript function called calculateTax that takes an income as an argument and returns the
+amount of tax to be paid. Use a closure to handle different tax rates based on income ranges. Test the
+function with various incomes.
+solution
+function calculateTax(income) {
+    return function() {
+        let tax;
+        if (income <= 50000) {
+            tax = income * 0.1; // 10% tax for income ≤ 50,000
+        } else if (income <= 100000) {
+            tax = income * 0.2; // 20% tax for income between 50,001 and 100,000
+        } else {
+            tax = income * 0.3; // 30% tax for income > 100,000
+        }
+        return tax;
+    }
+}
+
+// Example usage
+const tax1 = calculateTax(40000)();
+const tax2 = calculateTax(75000)();
+const tax3 = calculateTax(150000)();
+
+console.log(`Tax for income 40,000: $${tax1}`);  // Output: Tax for income 40,000: $4000
+console.log(`Tax for income 75,000: $${tax2}`);  // Output: Tax for income 75,000: $15000
+console.log(`Tax for income 150,000: $${tax3}`); // Output: Tax for income 150,000: $45000
+Closure: The calculateTax function returns another function (the closure) that calculates the tax based on the income. The closure allows for different tax rates depending on the income range.
+Tax Brackets: Tax is calculated based on the following rules:
+10% for income ≤ 50,000
+20% for income between 50,001 and 100,000
+30% for income > 100,000
+Example Usage: The function is tested with various incomes, and the respective taxes are calculated and displayed.
+
+
+Q5. Write a JavaScript function called factorial that calculates the factorial of a non-negative integer using
+recursion. Test the function with different inputs.
+solution
+function factorial(n) {
+    // Base case: factorial of 0 or 1 is 1
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+    // Recursive case: n * factorial of (n - 1)
+    return n * factorial(n - 1);
+}
+
+// Example usage
+console.log(factorial(5));  // Output: 120
+console.log(factorial(0));  // Output: 1
+console.log(factorial(7));  // Output: 5040
+Recursion: The factorial function calls itself to calculate the factorial of n. The base case stops the recursion when n is 0 or 1, returning 1.
+Example Usage: The function is tested with inputs 5, 0, and 7 to calculate their factorials:
+factorial(5) returns 120
+factorial(0) returns 1
+factorial(7) returns 5040
+
+Q6. Write a JavaScript function called curry that takes a function as an argument and returns a curried
+version of that function. The curried function should accept arguments one at a time and return a new
+function until all arguments are provided. Then, it should execute the original function with all arguments.
+Test the curry function with a function that adds two numbers.
+solution
+ a `curry` function in JavaScript, which takes a function as an argument and returns a curried version of that function. The curried function will accept arguments one at a time and return a new function until all arguments are provided. Once all arguments are gathered, it will execute the original function.
+`curry` function implementation:
+function curry(func) {
+    return function curried(...args) {
+        // Check if all arguments are provided
+        if (args.length >= func.length) {
+            return func(...args);  // Execute the original function
+        } else {
+            return function(...nextArgs) {
+                return curried(...args.concat(nextArgs));  // Return a new curried function
+            }
+        }
+    }
+}
+
+// Test function that adds two numbers
+function add(a, b) {
+    return a + b;
+}
+// Create a curried version of the add function
+const curriedAdd = curry(add);
+
+// Example usage
+console.log(curriedAdd(2)(3));  // Output: 5
+console.log(curriedAdd(5, 10)); // Output: 15
+```
+Explanation:
+- `curry` Function: The `curry` function takes a function `func` as input and returns a curried version of it. The curried function keeps collecting arguments until the number of arguments matches the original function’s expected parameters. Then, it executes the original function with all the arguments.
+- Recursive `curried` Function: The `curried` function keeps returning a new function if the expected arguments are not yet provided, allowing partial application of arguments.
+- Example Usage: The `curriedAdd` function can be called by passing arguments one at a time (`curriedAdd(2)(3)`) or all at once (`curriedAdd(5, 10)`), resulting in the correct sum.
+
+This approach allows for flexible and modular function application.
+
+
+
+
+
+
+
+
+
