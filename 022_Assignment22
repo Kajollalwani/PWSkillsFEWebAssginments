@@ -1,0 +1,203 @@
+                                         Javascript Fundamentals Assignment
+
+Q1. Write a JavaScript function called outerFunction that takes a parameter and returns an inner function.
+The inner function should access both the parameter of outerFunction and a variable declared within
+outerFunction. Demonstrate how lexical scoping allows the inner function to maintain access to these
+variables even after outerFunction has finished executing.
+solution
+function outerFunction(outerParam) {
+    let outerVariable = "I am inside outerFunction";
+
+    // Inner function accessing outerParam and outerVariable
+    return function innerFunction() {
+        console.log(`Outer Parameter: ${outerParam}`);
+        console.log(`Outer Variable: ${outerVariable}`);
+    };
+}
+
+// Example usage
+const closureFunc = outerFunction("Hello");
+closureFunc();
+outerFunction: Takes a parameter outerParam and declares a local variable outerVariable.
+innerFunction: Is nested within outerFunction and has access to both outerParam and outerVariable due to lexical scoping. This means innerFunction forms a closure, "remembering" the environment in which it was created, even after outerFunction has completed execution.
+Closure Example: When closureFunc is invoked, it still has access to outerParam and outerVariable, demonstrating how closures retain the scope of the outer function.
+Example Output:
+Outer Parameter: Hello
+Outer Variable: I am inside outerFunction
+This demonstrates how lexical scoping allows the inner function to access the outer function's variables even after the outer function has finished executing.
+
+Q2. Create a JavaScript program that demonstrates the basic usage of regular expressions. Write a function
+that takes a regex pattern and a string as input and returns true if there is a match, and false otherwise. Test
+the function with various patterns and strings.
+solution
+function testRegex(pattern, str) {
+    const regex = new RegExp(pattern); // Create a RegExp object from the pattern
+    return regex.test(str);  // Test if the pattern matches the string
+}
+
+// Example usage
+console.log(testRegex('^hello', 'hello world'));    // Output: true (matches 'hello' at the start)
+console.log(testRegex('world$', 'hello world'));    // Output: true (matches 'world' at the end)
+console.log(testRegex('\\d+', 'abc123def'));        // Output: true (matches one or more digits)
+console.log(testRegex('abc', 'ABCDEF'));            // Output: false (case-sensitive, no match)
+console.log(testRegex('abc', 'abcDEF'));            // Output: true (case-sensitive, match found)
+Explanation:
+testRegex Function: This function takes two arguments, a regex pattern as a string and the string to be tested. It creates a regular expression using the RegExp constructor and uses the .test() method to check if the pattern matches any part of the string.
+Regex Patterns:
+^hello: Matches "hello" at the beginning of the string.
+world$: Matches "world" at the end of the string.
+\\d+: Matches one or more digits.
+abc: Matches the literal string "abc".
+Example Outputs:
+'hello world' matches ^hello, so the output is true.
+'hello world' matches world$, so the output is true.
+'abc123def' matches \\d+ (digits), so the output is true.
+'ABCDEF' does not match 'abc' (case-sensitive), so the output is false.
+'abcDEF' matches 'abc', so the output is true.
+This program shows how regular expressions can be used to test patterns against strings in JavaScript.
+
+
+Q3. Write a JavaScript program that demonstrates the use of character classes in regular expressions.
+Create a function that searches for specific character classes in a given string and returns the matches. Test
+the function with patterns for digits, uppercase letters, lowercase letters, and special characters.
+solution
+function findCharacterClasses(pattern, str) {
+    const regex = new RegExp(pattern, 'g');  // Create a RegExp object with the global flag
+    return str.match(regex) || [];  // Return matches or an empty array if no matches found
+}
+
+// Example usage and testing
+
+let testString = "Hello123! Welcome to 2023, @Code World$";
+
+// Find digits
+console.log(findCharacterClasses('\\d', testString));  // Output: ['1', '2', '3', '2', '0', '2', '3']
+
+// Find uppercase letters
+console.log(findCharacterClasses('[A-Z]', testString));  // Output: ['H', 'W', 'C', 'W']
+
+// Find lowercase letters
+console.log(findCharacterClasses('[a-z]', testString));  // Output: ['e', 'l', 'l', 'o', 'e', 'l', 'c', 'o', 'm', 'e', 't', 'o', 'o', 'd', 'e', 'o', 'r', 'l', 'd']
+
+// Find special characters (non-alphanumeric)
+console.log(findCharacterClasses('[^a-zA-Z0-9\\s]', testString));  // Output: ['!', '@', '$']
+Explanation:
+findCharacterClasses Function:
+Takes a pattern and str as input.
+Creates a regular expression using new RegExp(pattern, 'g') to enable global matching (finds all matches, not just the first one).
+Uses .match() to find all matches of the character class in the string, or returns an empty array if no matches are found.
+Character Classes Used:
+\\d: Matches any digit (0-9).
+[A-Z]: Matches any uppercase letter (A-Z).
+[a-z]: Matches any lowercase letter (a-z).
+[^a-zA-Z0-9\\s]: Matches any special characters (anything that is not a letter, digit, or whitespace).
+Example Output:
+Digits: ['1', '2', '3', '2', '0', '2', '3']
+Uppercase Letters: ['H', 'W', 'C', 'W']
+Lowercase Letters: ['e', 'l', 'l', 'o', 'e', 'l', 'c', 'o', 'm', 'e', 't', 'o', 'o', 'd', 'e', 'o', 'r', 'l', 'd']
+Special Characters: ['!', '@', '$']
+This program efficiently demonstrates the use of regular expression character classes to search for and extract specific types of characters from a string.
+
+Q4. Create a JavaScript program that takes a regex pattern and a string as input. Write a function that not
+only checks if there is a match but also extracts specific parts of the matched text using groups. Test the
+function with patterns that include groups to capture different parts of a date (e.g., day, month, and year)
+from a given string.
+solution
+function extractGroups(pattern, str) {
+    const regex = new RegExp(pattern);
+    const match = str.match(regex);  // Find the match
+
+    if (match) {
+        return {
+            fullMatch: match[0],   // The full matched string
+            groups: match.slice(1) // The captured groups (day, month, year)
+        };
+    } else {
+        return null;  // No match found
+    }
+}
+
+// Example usage and testing
+
+let testString = "Today's date is 24-08-2024";
+let datePattern = '(\\d{2})-(\\d{2})-(\\d{4})';  // Regex pattern with groups for day, month, and year
+
+let result = extractGroups(datePattern, testString);
+
+if (result) {
+    console.log(`Full Match: ${result.fullMatch}`);    // Output: Full Match: 24-08-2024
+    console.log(`Day: ${result.groups[0]}`);           // Output: Day: 24
+    console.log(`Month: ${result.groups[1]}`);         // Output: Month: 08
+    console.log(`Year: ${result.groups[2]}`);          // Output: Year: 2024
+} else {
+    console.log("No match found.");
+}
+Explanation:
+extractGroups Function: This function takes a regex pattern and a str as input.
+
+It uses the match() method to search for a match of the regex pattern in the string.
+If a match is found, it returns an object containing the full match (match[0]) and an array of the captured groups (day, month, and year), extracted using match.slice(1).
+Regex Pattern:
+
+\\d{2}: Matches exactly two digits, used for capturing the day and month.
+\\d{4}: Matches exactly four digits, used for capturing the year.
+The pattern (\\d{2})-(\\d{2})-(\\d{4}) captures the day, month, and year, each as a separate group.
+Example Output:
+Full Match: 24-08-2024
+Day: 24
+Month: 08
+Year: 2024
+How It Works:
+The regex pattern (\d{2})-(\d{2})-(\d{4}) is applied to the string "Today's date is 24-08-2024".
+The match() method returns an array where:
+The first element is the full matched string ("24-08-2024").
+The subsequent elements are the captured groups: "24" for the day, "08" for the month, and "2024" for the year.
+This program demonstrates how to use regex groups to extract specific parts of a matched string, such as the day, month, and year from a date.
+
+Q5. You are building a shipping application. Write a program that takes the type of package ("standard",
+"express", or "overnight") and uses a switch statement to calculate and print the estimated delivery time
+based on the package type. For example, "standard" might take 3-5 days, "express" 1-2 days, and
+"overnight" would be delivered the next day.
+solution
+function calculateDeliveryTime(packageType) {
+    let deliveryTime;
+
+    switch (packageType.toLowerCase()) {
+        case "standard":
+            deliveryTime = "3-5 days";
+            break;
+        case "express":
+            deliveryTime = "1-2 days";
+            break;
+        case "overnight":
+            deliveryTime = "Delivered the next day";
+            break;
+        default:
+            deliveryTime = "Invalid package type";
+    }
+
+    console.log(`Estimated delivery time for ${packageType}: ${deliveryTime}`);
+}
+
+// Example usage
+calculateDeliveryTime("standard");   // Output: Estimated delivery time for standard: 3-5 days
+calculateDeliveryTime("express");    // Output: Estimated delivery time for express: 1-2 days
+calculateDeliveryTime("overnight");  // Output: Estimated delivery time for overnight: Delivered the next day
+calculateDeliveryTime("priority");   // Output: Estimated delivery time for priority: Invalid package type
+Explanation:
+calculateDeliveryTime Function: This function takes the packageType as input and uses a switch statement to determine the estimated delivery time based on the package type.
+The toLowerCase() method is used to handle case-insensitivity.
+Depending on the package type, it assigns a corresponding delivery time.
+If the package type doesn't match any known type, it returns "Invalid package type".
+Example Outputs:
+calculateDeliveryTime("standard"): Outputs "Estimated delivery time for standard: 3-5 days".
+calculateDeliveryTime("express"): Outputs "Estimated delivery time for express: 1-2 days".
+calculateDeliveryTime("overnight"): Outputs "Estimated delivery time for overnight: Delivered the next day".
+calculateDeliveryTime("priority"): Outputs "Estimated delivery time for priority: Invalid package type".
+This approach allows for flexibility in handling different package types and printing the corresponding delivery estimates.
+
+
+
+
+
+
